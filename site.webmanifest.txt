@@ -1,0 +1,1 @@
+{"name":"VAYRO","short_name":"VAYRO","start_url":"/","display":"standalone","background_color":"#080808","theme_color":"#090A0C"}
