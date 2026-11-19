@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VAYRO Studio Dashboard — Local Demo</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#090a0c;--panel:#111316;--line:#30343a;--silver:#c7c9cc;--muted:#92979e}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:#f4f4f1;font-family:Manrope,Arial,sans-serif}
+.wrap{max-width:1180px;margin:auto;padding:0 5vw}.top{border-bottom:1px solid var(--line);padding:13px;text-align:center;font-size:9px;letter-spacing:.3em;color:#aaa}
+nav{display:flex;justify-content:space-between;align-items:center;padding:23px 0;border-bottom:1px solid var(--line);gap:16px;flex-wrap:wrap}
+.logo{font-size:27px;font-weight:800;letter-spacing:.25em;color:#fff;text-decoration:none}nav a:not(.logo){font-size:9px;letter-spacing:.15em;color:#ccc;text-decoration:none}
+.hero{padding:48px 0 25px}.eyebrow{font-size:9px;letter-spacing:.27em;color:var(--silver);font-weight:800}
+h1{font-size:clamp(42px,7vw,76px);letter-spacing:-.07em;line-height:.95;margin:15px 0}.muted{color:var(--muted);font-size:12px;line-height:1.9;max-width:720px}
+.notice{border:1px solid #695a38;background:#17140e;color:#d9c99e;padding:16px;font-size:10px;line-height:1.8;margin:22px 0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.panel{background:linear-gradient(145deg,#17191d,#0d0e10);border:1px solid var(--line);padding:23px;margin:14px 0}
+h2{font-size:18px;letter-spacing:-.03em;margin:0 0 18px}.field{display:grid;gap:8px;margin:15px 0}.field label{font-size:9px;letter-spacing:.17em;color:#bbb;font-weight:800}
+input,textarea,select{width:100%;background:#090a0c;color:#eee;border:1px solid #454a51;padding:13px;font:inherit;font-size:12px;border-radius:5px}
+textarea{min-height:105px;resize:vertical}.btn{background:#e6e7e8;color:#090a0c;border:0;padding:14px 18px;font:800 9px Manrope;letter-spacing:.17em;cursor:pointer}
+.btn.secondary{background:#15171a;color:#eee;border:1px solid #555}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.stat{border:1px solid var(--line);padding:17px;background:#0e1012}.stat b{display:block;font-size:22px}.stat span{font-size:9px;letter-spacing:.14em;color:#999}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0 28px}
+.preview{border:1px solid var(--line);padding:18px;background:#0c0d0f}.preview strong{font-size:13px}.preview p{color:#999;font-size:11px;line-height:1.8}
+.status{font-size:9px;letter-spacing:.15em;color:#bfc2c6}.foot{padding:28px 0;border-top:1px solid var(--line);font-size:9px;color:#777;letter-spacing:.15em;margin-top:35px}
+@media(max-width:720px){.grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.panel{padding:18px}}
+</style></head>
+<body><div class="top">VAYRO STUDIO · FOUNDER WORKSPACE</div><div class="wrap">
+<nav><a class="logo" href="/">VAYRO</a><div><a href="/">VIEW STORE</a>　<a href="shop.html">SHOP</a>　<a href="core-001.html">CORE 001</a></div></nav>
+<header class="hero"><div class="eyebrow">FOUNDER WORKSPACE · LOCAL DEMO</div><h1>STUDIO<br>DASHBOARD.</h1><p class="muted">A private-to-this-browser draft workspace for shaping VAYRO product and collection content. Changes here are saved only in this browser and do not publish to the live storefront.</p></header>
+<div class="notice"><b>IMPORTANT — DEMO MODE ONLY.</b><br>This page has no secure admin login, server database, customer records, order controls or payment access. Do not enter personal/customer information or passwords here. Drafts are stored in this browser only.</div>
+<div class="stats"><div class="stat"><b>03</b><span>COLLECTIONS</span></div><div class="stat"><b>01</b><span>PRODUCT CONCEPT</span></div><div class="stat"><b>LOCAL</b><span>DRAFT STORAGE</span></div></div>
+<div class="grid">
+<section class="panel"><h2>PRODUCT DRAFT · CORE 001</h2>
+<div class="field"><label for="productName">PRODUCT NAME</label><input id="productName" maxlength="70" value="THE SIGNATURE TEE."></div>
+<div class="field"><label for="productLine">COLLECTION</label><select id="productLine"><option>CORE</option><option>FUTURE</option><option>ELITE</option></select></div>
+<div class="field"><label for="productStatus">STATUS</label><select id="productStatus"><option>Concept Preview</option><option>Sample in Development</option><option>Ready for Review</option><option>On Hold</option></select></div>
+<div class="field"><label for="productDescription">DESCRIPTION</label><textarea id="productDescription" maxlength="500">Oversized boxy fit · Obsidian Black · Silver V mark · Original back graphic concept.</textarea></div>
+<div class="actions"><button class="btn" id="saveProduct">SAVE LOCAL DRAFT</button><button class="btn secondary" id="resetProduct">RESET</button></div>
+</section>
+<section class="panel"><h2>COLLECTION NOTES</h2>
+<div class="field"><label for="coreNote">CORE</label><textarea id="coreNote" maxlength="300">Everyday foundation. Start with CORE 001.</textarea></div>
+<div class="field"><label for="futureNote">FUTURE</label><textarea id="futureNote" maxlength="300">New forms and future-facing silhouettes. In development.</textarea></div>
+<div class="field"><label for="eliteNote">ELITE</label><textarea id="eliteNote" maxlength="300">Elevated edit. Premium concept direction in development.</textarea></div>
+<div class="actions"><button class="btn" id="saveCollections">SAVE COLLECTION NOTES</button></div>
+</section></div>
+<section class="panel"><h2>LIVE DRAFT PREVIEW</h2><div class="preview"><div class="eyebrow" id="previewCollection">VAYRO CORE / 001</div><strong id="previewName">THE SIGNATURE TEE.</strong><p id="previewDescription">Oversized boxy fit · Obsidian Black · Silver V mark · Original back graphic concept.</p><div class="status" id="previewStatus">CONCEPT PREVIEW</div></div><p class="muted">This preview reflects the draft fields on this page. It does not update the public Shop or product page.</p></section>
+<footer class="foot">© 2026 VAYRO · DESIGNED BEYOND ORDINARY · FOUNDER: YAFI</footer>
+</div>
+<script>
+const productDefaults={name:"THE SIGNATURE TEE.",line:"CORE",status:"Concept Preview",description:"Oversized boxy fit · Obsidian Black · Silver V mark · Original back graphic concept."};
+const collectionDefaults={core:"Everyday foundation. Start with CORE 001.",future:"New forms and future-facing silhouettes. In development.",elite:"Elevated edit. Premium concept direction in development."};
+const $=id=>document.getElementById(id);
+function read(key,fallback){try{return JSON.parse(localStorage.getItem(key))||fallback}catch(e){return fallback}}
+function renderProduct(p){$("productName").value=p.name;$("productLine").value=p.line;$("productStatus").value=p.status;$("productDescription").value=p.description;updatePreview()}
+function currentProduct(){return{name:$("productName").value.trim(),line:$("productLine").value,status:$("productStatus").value,description:$("productDescription").value.trim()}}
+function updatePreview(){const p=currentProduct();$("previewCollection").textContent="VAYRO "+p.line+" / 001";$("previewName").textContent=p.name||"UNTITLED DRAFT";$("previewDescription").textContent=p.description||"No description added."; $("previewStatus").textContent=p.status.toUpperCase()}
+renderProduct(read("vayro_admin_product_draft_v1",productDefaults));
+const notes=read("vayro_admin_collection_notes_v1",collectionDefaults);$("coreNote").value=notes.core;$("futureNote").value=notes.future;$("eliteNote").value=notes.elite;
+["productName","productLine","productStatus","productDescription"].forEach(id=>$(id).addEventListener("input",updatePreview));
+$("saveProduct").onclick=()=>{const p=currentProduct();if(!p.name){alert("Add a product name first.");return}localStorage.setItem("vayro_admin_product_draft_v1",JSON.stringify(p));updatePreview();alert("Product draft saved in this browser only.")};
+$("resetProduct").onclick=()=>{localStorage.removeItem("vayro_admin_product_draft_v1");renderProduct(productDefaults)};
+$("saveCollections").onclick=()=>{const n={core:$("coreNote").value,future:$("futureNote").value,elite:$("eliteNote").value};localStorage.setItem("vayro_admin_collection_notes_v1",JSON.stringify(n));alert("Collection notes saved in this browser only.")};
+</script></body></html>
